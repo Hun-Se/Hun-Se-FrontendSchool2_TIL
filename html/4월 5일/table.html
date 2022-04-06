@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table</title>
+    <style>
+        tr td {
+            border: solid 1px black;
+        }
+
+        .구분 {
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <!-- sso측면에서 caption은 반드시 넣어준다. -->
+        <caption> 이달의 책 판매량 </caption>
+        <thead>
+            <tr>
+                <th>구분</th>
+                <th>이름</th>
+                <th>판매량</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>해리포터</td>
+                <td>100</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>헝거게임</td>
+                <td>200</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>반지의제왕</td>
+                <td>300</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr></tr>
+        </tfoot>
+    </table>
+
+    <!-- colspan, rowspan -->
+    <table>
+        <caption> 이달의 책 판매량 </caption>
+        <tr>
+            <th>구분</th>
+            <th colspan="2">이름</th>
+            <!-- <th>판매량</th> -->
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>해리포터</td>
+            <td rowspan="2">100</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>해리포터2</td>
+            <!-- <td>100</td> -->
+        </tr>
+    </table>
+
+    <!-- <colgroup> -->
+    <table>
+        <caption>
+            이 table은 영국에서 최초로 시작되어 일년에 한바퀴 돌면서...
+        </caption>
+        <colgroup>
+            <col class="구분" />
+            <col class="이름" />
+            <col class="판매량" />
+        </colgroup>
+        <thead>
+            <tr>
+                <th>구분</th>
+                <th>이름</th>
+                <th>판매량</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>해리포터</td>
+                <td>100</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>헝거게임</td>
+                <td>200</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>반지의제왕</td>
+                <td>300</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2">총 판매량</td>
+                <td>600</td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <!-- scope 속성-->
+    <table>
+        <caption>요일별 급식 만족도</caption>
+        <tbody>
+            <tr>
+                <th></th>
+                <th scope="col">월요일</th>
+                <th scope="col">화요일</th>
+                <th scope="col">수요일</th>
+                <th scope="col">목요일</th>
+                <th scope="col">금요일</th>
+                <th scope="col">토요일</th>
+            </tr>
+            <tr>
+                <th scope="row">메뉴</th>
+                <td>돈까스</td>
+                <td>짜장면</td>
+                <td>볶음밥</td>
+                <td>해물라면</td>
+                <td>잔치국수</td>
+                <td>떡볶이</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th scope="row">만족도</th>
+                <td>3/5</td>
+                <td>4/5</td>
+                <td>1/5</td>
+                <td>5/5</td>
+                <td>2/5</td>
+                <td>3/5</td>
+            </tr>
+        </tfoot>
+    </table>
+
+</body>
+
+</html>
