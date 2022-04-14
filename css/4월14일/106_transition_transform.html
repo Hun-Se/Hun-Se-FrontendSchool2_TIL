@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <style>
+        @keyframes 두근두근 {
+            10% {
+                transform: scale(1) rotate(60deg);
+            }
+            25% {
+                transform: scale(2) translate(20px);
+            }
+            50% {
+                transform: scale(1) rotate(-60deg);
+            }
+            75% {
+                transform: scale(2) translate(20px);
+            }
+            100% {
+                transform: scale(1) rotate(60deg);
+            }
+        }
+
+        div {
+            margin: 100px;
+            background-color: blue;
+            width: 100px;
+            height: 100px;
+            transition: all .3s;
+        }
+
+        div:hover {
+            animation: 두근두근 1s;
+            
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

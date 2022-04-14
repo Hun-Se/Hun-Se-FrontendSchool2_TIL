@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <link rel="stylesheet" href="reset.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        .container {
+            display: flex;
+            height: 100vh;
+            /* flex-wrap: wrap; */
+        }
+
+        li {
+            /* width 값을 무하 부의 영역을 모차 */
+            /* flex-grow: 1; */
+            /* witdh, hight 값대로 그려지지만 줄어들었을 때 브라우져 크기가 전체 컨텐츠 널이보다 줄어든다면 
+            li 크기가 전체 넓이보다 줄어든다면 li크기도 줄어든다. */
+            flex-grow: 0;
+            box-sizing: border-box;
+            width: 100px;
+            /* height: 50px; */
+            background-color: pink;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <ul class="container">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+    </ul>
+</body>
+</html>
