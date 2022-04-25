@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reverse</title>
+    <style>
+
+        /* 100%에 0,0의 새로 시작하는 요소를 추가해주어 애니메이션이 반복해주는 듯한 효과를 낸다. */
+        @keyframes move {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            25% {
+                transform: translate(200px, 0);
+            }
+
+            50% {
+                transform: translate(200px, 200px);
+            }
+
+            75% {
+                transform: translate(0, 200px);
+            }
+
+            100% {
+                transform: translate(0, 0);
+            }
+        }
+
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: rosybrown;
+            animation: 돌아와돌아와돌아와 3s alternate infinite;
+        }
+    </style>
+</head>
+
+<body>
+    <div>hello</div>
+</body>
+
+</html>
