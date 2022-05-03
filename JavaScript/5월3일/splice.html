@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+        var avengers = ['spiderman', 'ironman', 'hulk', 'thor'];
+        // 아이템 삭제. 
+        avengers.splice(3, 1); // 3번 인덱스 요소 하나만 삭제
+        avengers.splice(3); // 3번 인덱스부터 전부 삭제
+        // 아이템 추가
+        avengers.splice(3, 0, 'blackwidow');
+        // 아이템 교체
+        avengers.splice(1, 1, 'hulk');
+        // var avengers = ['spiderman', 'ironman', 'hulk', 'thor'];
+        // avengers.splice(2, 0, 'blackwidow');
+        // console.log(avengers);
+        // avengers.splice(0,0, 'vision');
+        // console.log(avengers);
+        
+
+        var fish = ['정어리', '고등어', '돌고래', '참치', '고래상어', '코끼리'];
+        // 1. splice 를 이용해 코끼리를 제거해보세요
+        // 2. 참치 다음에 다금바리를 추가해보세요
+        // 3. 돌고래를 제거하고 옥돔과 갈치를 추가해보세요
+        // 4. 참치를 제거하고 문어와 멸치를 추가해보세요
+        fish.splice(-1,1);
+        console.log(fish);
+        fish.splice(4,0,'다금바리');
+        console.log(fish);
+        fish.splice(2,1,'옥돔','갈치')
+        console.log(fish);
+        fish.splice(4,1,'문어','갈치')
+        console.log(fish);
+    </script>
+</body>
+</html>
