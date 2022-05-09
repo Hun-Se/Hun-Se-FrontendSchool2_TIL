@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <script>
+        for (let i = 0; i < 5; i++) {
+            console.log(i);
+        }
+
+        let sample = ['A', 'B', 'C', 'DD', 'EE'];
+
+        for (let i = 0; i < sample.length; i++) {
+            console.log(sample[i]);
+        }
+
+        i = 0;
+        for (;;) {
+            i++;
+            console.log(i);
+            if (i > 5) {
+                break
+            }
+        }
+
+        age = [19, 30, 23, 28, 32, 40, 32, 35, 29, 30];
+        for (let i = 0; i < age.length; i++) {
+            console.log(age[i]);
+        }
+
+        let sum = 0;
+        for (let i = 0; i < age.length; i++) {
+            sum = sum + age[i];
+        }
+        console.log(sum);
+        console.log(sum / age.length);
+
+
+        let 성별 = ['male', 'female', 'male', 'female', 'female'];
+        let 남성 = 0;
+        let 여성 = 0;
+        for (let i = 0; i < 성별.length; i++) {
+            if (성별[i] == 'male') {
+                남성++;
+            }
+        }
+        console.log(남성);
+        console.log(남성 / 성별.length * 100 + '%');
+        console.log(성별.filter(i => i == 'male').length);
+
+        sum = ''
+        for (let i = 0; i < 100; i++) {
+            sum += i;
+        }
+        console.log(sum);
+        let count = 0;
+        for (let i = 0; i < sum.length; i++) {
+            if (sum[i] == '8') {
+                count++;
+            }
+        }
+        console.log(count);
+        console.log(Array(100).fill(0).map((v, i) => v + i).join('').split('').filter(x => x == '8').length);
+
+        let data = [{
+                회원번호: 0,
+                아이디: 'a',
+                성별: '남',
+                나이: 21
+            },
+            {
+                회원번호: 1,
+                아이디: 'b',
+                성별: '남',
+                나이: 17
+            },
+            {
+                회원번호: 2,
+                아이디: 'c',
+                성별: '여',
+                나이: 6
+            },
+            {
+                회원번호: 3,
+                아이디: 'd',
+                성별: '여',
+                나이: 55
+            }
+        ]
+
+        for (let i = 0; i < data.length; i++) {
+            console.log(data[i]);
+        }
+
+        for (let i = 0; i < data.length; i++) {
+            if (data[i]['나이'] >= 20 && data[i]['성별'] == '여') {
+                console.log(data[i]['회원번호'])
+            }
+        }
+
+        let result = [];
+        for (let i = 0; i < data.length; i++) {
+            if (data[i]['나이'] >= 20 && data[i]['성별'] == '여') {
+                result.push(data[i]['회원번호'])
+            }
+        }
+        console.log(result);
+
+        console.log(data.filter(i => i['나이'] >= 20 && i['성별'] == '여'));
+
+        let 나이총합 = 0;
+        for (let i = 0; i < data.length; i++) {
+            나이총합 += data[i]['나이'];
+        }
+        console.log(나이총합);
+
+        console.log(나이총합 / data.length);
+        
+        console.log(data.map(i => i['나이']));
+        console.log(data.map(i => i['나이']).reduce((a, b) => a + b, 0));
+        
+        let 가장큰나이 = 0;
+        for (let i = 0; i < data.length; i++) {
+            if (가장큰나이 < data[i]) {
+                가장큰나이 = data[i]
+            }
+        }
+        console.log(가장큰나이);
+    
+
+        let 가장작은나이 = 1000000
+        for (let i = 0; i < data.length; i++) {
+            if (가장작은나이 > data[i]['나이']) {
+                가장작은나이 = data[i]['나이']
+            }
+        }
+        console.log(가장작은나이);
+        
+
+        let arr = [21, 17, 6, 55];
+        console.log(Math.abs(-3));
+        console.log(Math.min(10, 20, 30, 40, 5, 4, 100));
+    </script>
+</body>
+
+</html>
