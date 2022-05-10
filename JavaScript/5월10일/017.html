@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <script>
+        let value = [10, 1, 100, 200, 300, 10];
+        let value2 = {
+            피카츄: 1,
+            라이츄: 2,
+            파이리: 3,
+            꼬부기: 4,
+            버터플: 5,
+            야도란: 6,
+            피죤투: 7,
+            또가스: 8,
+            메타몽: 9,
+        };
+        let value3 = {
+            피카츄: 10,
+            라이츄: 20,
+            파이리: 30,
+            꼬부기: 40,
+            버터플: 50,
+            야도란: 60,
+            피죤투: 70,
+            또가스: 80,
+            메타몽: 90,
+        };
+        for (let i in value) {
+            console.log(i);
+        }
+
+        for (let i in value2) {
+            console.log(i);
+        }
+
+        for (let i in value2) {
+            console.log(i);
+            console.log(value2[i]);
+        }
+
+        for (let i in value3) {
+            console.log(i);
+            console.log(value2[i]);
+        }
+
+        for (let i in value3) {
+            console.log(i);
+            console.log(value3[i]);
+        }
+
+        for (let i in 'hello world') {
+            console.log(i);
+        }
+
+        for (let i in 'hello world') {
+            console.log('hello world'[i]);
+        }
+
+        Object.keys(value3)
+        let 포켓몬 = Object.keys(value3);
+        
+        console.log(포켓몬);
+        
+        for (let i of [10, 20, 30, 40]) {
+            console.log(i);
+        }
+
+        for (let i of 'hello world') {
+            console.log(i);
+        }
+
+        console.log(value3);
+        // value3는 일반적인 객체 리터럴이기 때문에 for of문을 쓰면 오류가 발생한다.
+        // for (let i of value3) {
+        //     console.log(i);
+        // }
+
+
+        //Object.entries를 사용해서 객체로 반환하여 for of를 슬 수 있다. 
+        console.log(Object.entries(value3));
+        for (let i of Object.entries(value3)) {
+            console.log(i);
+        }
+
+        for (let [i, j] of Object.entries(value3)) {
+            console.log(i);
+            console.log(j);
+        }
+
+        for (let [i,j] of [[1,2], [3,4]]) {
+            console.log(i,j);
+        }
+
+        console.log('----------------');
+
+        for (let [i, j] of [[[1, 2], 2], [[1, 2], 4]]) {
+            console.log(i, j);
+        }
+        for (let [[a,b],j] of [[[1,2],2], [[1,2],4]]) {
+            console.log(a,b,j);
+        }
+
+        let [a, b] = '10,20'.split(',');
+        console.log(a);
+        console.log(b);
+
+        [a, b, ...c] = [10, 20, 30, 40, 50];
+        console.log(c);
+        let obj = {name:'sehun', age: '10'};
+        let {name, age} = obj;
+        console.log(name);
+
+        let {name2, age2} = {name2:'sehun', height2:'20', age2:'10'}
+        console.log(age2);
+        // console.log(height2) height2가 없어서 오류
+
+
+        // 일치하는 이름이 없기 때문에 undefined
+        let {aa, bb} = {name2:'sehun', height2:'20', age2:'10'}
+        console.log(aa);
+        console.log(bb);
+
+        let {name3, ...rest} = {name3: 'sehun', height3:'20', age3:'10'}
+        console.log(rest);
+
+        // abc를 [1, 10, 20, 30, 2] 만들기
+
+        let abc = [10, 20, 30];
+
+        // 방법 1
+        abc.push(2);
+        abc.unshift(1);
+        console.log(abc);
+        
+        // 방법 2
+        bd = [1, ...abc, 2];
+        console.log(bd);
+
+        Math.max(3, 5, 1, 10, 8, 7);
+
+        let arr = [3, 5, 1, 10, 8, 7];
+
+        Math.max(arr);
+
+        Math.max(...arr);
+
+        let arr1 = [1, -2, 3, 4];
+        let arr2 = [8, 3, -8, 1];
+
+        Math.max(...arr1, ...arr2);
+        [100, 200, ...arr1, ...arr2];
+        (10) [100, 200, 1, -2, 3, 4, 8, 3, -8, 1]
+        let str = 'hello world';
+        console.log([...str]);
+
+        let d = new Date();
+
+        console.log(d);
+        console.log(d.getDate());
+        console.log(d.getFullYear());
+        console.log(d.getDay());
+        console.log(d.getSeconds());
+
+
+        console.log('---------------------');
+        let 변수 = [15, 22, 33, 111, 2];
+
+        for (let i of 변수) {
+            console.log(i);
+        }
+
+        //문자형으로 변환
+        for (let i of 변수) {
+            console.log(''+i)
+        }
+
+        //split으로 나눠준다.
+        for (let i of 변수) {
+            let s = ''+i;
+            console.log(s.split(''));
+        }
+
+        let sum = 0;
+        for (let i of 변수) {
+            let s = ''+i;
+            for (let j of s.split('')) {
+                sum += +j;
+            }
+        }
+        console.log(sum);
+
+        console.log(변수);
+        console.log(변수.map(x=>'' + x).join().replaceAll(',', '').split('').reduce((a, b)=>(+a + +b)));
+        console.log(변수.map(x=>'' + x).join('').split('').reduce((a, b)=>(+a + +b)));
+        
+        let sum2 = 0
+        for (let i of 변수) {
+        (''+i).split('').forEach(x => sum2 += +x)
+        }
+        console.log(sum2)
+
+        let str2 = 변수.join('');
+        let result = 0;
+        for (let i = 0; i < str.length; i++) { result +=parseInt(str2[i], 10); }
+        function 안녕(){
+        console.log('hello world');
+        }
+        for (let i = 0; i < 5; i++) { 
+            안녕() ;
+        }
+        
+        function 더해라(x, y){
+        return x + y;
+        }
+        console.log(더해라(10, 20));
+
+        function 다더해라(a, b, c) {
+        let z = 50;
+        return a + b + c + z
+        }
+
+        console.log(다더해라(10,20,30));
+
+
+        // var은 전역변수 사용 피할것
+        var z3 = 50;
+        function 다더해라3(a, b, c) {
+        return a + b + c + z3
+        }
+        console.log(다더해라3(10,20,30));
+
+        let 함수2 = (x, y) => x + y;
+        console.log(함수2(10,20));
+
+
+        // 함수를 사용하면 재사용성이 용이하다.
+        function 함수5(x, y, c){
+        // 1000줄의 코드
+        c(x + y); //언젠가가 지금! 지금 너를 호출해줄게! 콜백!
+        // 1000줄의 코드
+        return x + y;
+        }
+        function aaa(s){
+        document.write('콜백함수', s);
+        }
+
+        function 안녕(){
+        console.log('hello world 1');
+        console.log('hello world 2');
+        console.log('hello world 3');
+        }
+
+        console.log(안녕())
+
+        function 안녕(){
+        console.log('hello world 1');
+        console.log('hello world 2');
+        console.log('hello world 3');
+        return
+        }
+
+        console.log(안녕())
+
+        function 안녕2(){
+        document.write('1');
+        document.write('2');
+        document.write('3');
+        }
+
+        console.log(안녕2());
+
+        function 제곱(x){
+        return x**2
+        }
+        document.write(제곱(5))
+
+        function test1(){
+        return 'hello 1'
+        }
+
+        let test2 = function(){
+        return 'hello 2'
+        }
+
+        let test3 = ()=>'hello3'
+
+        console.dir(test1);
+
+        //즉시 실행함수 재사용하지 않으려고 사용한다.
+        (function 이름(){
+        console.log('hello world')
+        }())
+
+        // 모든 요소들이 로드된 이후에 실행, 함수는 1개만 실행 가능
+        // window.onload = function(){}
+
+        function 함수6(x, y, c){
+        // 1000줄의 코드
+        c(x + y); //언젠가가 지금! 지금 너를 호출해줄게! 콜백!
+        // 1000줄의 코드
+        return x + y;
+        }
+
+        function factorial(n){
+        return n * (n-1)
+        }
+
+        function factorial(n){
+        if (n <= 1){ return n } return n * factorial(n - 1) }
+
+        console.log(factorial(5));
+
+        let s = 1;
+        for (let i = 1; i < 6; i++) { s *=i }
+        console.log(s);
+
+        function factorial(n){
+        if (n <= 1){ return n } return n * factorial(n - 1) }
+
+        let k = 1;
+        for (let i = 5; i > 0; i--) {
+            k *= i
+        }
+
+        function sigma(n){
+        if (n <= 1){
+            return n
+        }
+            return n + sigma(n - 1)
+        }
+
+        console.log(sigma(100));
+
+        let p = ''
+        for (let i of 'hello world') {
+        p = i + p
+        }
+        console.log(p);
+
+        function reverse(text){
+        text += ''
+        if (text.length <= 1){ return text } return reverse(text.slice(1)) + text[0] }
+        
+        console.log(reverse('hello world'));
+
+        let arr4 = [10, 20, 30]
+        function 함수(value){
+        value[0] = 1000;
+        }
+
+        console.log(arr4);
+
+        let x = 0
+        function 함수200(value){
+        value=1000;
+        }
+        console.log(함수200(x));
+
+        let aq = {}
+        function 함수300(b){
+        b = 1000;
+        }
+        console.log(함수300(aq));
+
+        // call by value는 값의 전달
+        let jkl = 1
+        function test(x){
+        x = 1000
+        }
+        test(jkl);
+        console.log(x);
+
+        // call by reference(실제로는 call by value)
+        let arr8 = [10, 20, 30]
+        function test5(x){
+        x[0] = 1000
+        }
+
+        test5(arr8);
+        console.log(arr8);
+    </script>
+</body>
+
+</html>
