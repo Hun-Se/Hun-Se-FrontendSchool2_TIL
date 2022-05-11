@@ -68,6 +68,10 @@
 </div>
 </details>
 
+<details>
+<summary><b>5월 10일 개념정리 펼치기</b></summary>
+<div markdown="1">
+
 ## 5월 10일 개념정리
 
 1. Babel: ECMAScript 2015+ 코드를 이전 JavaScript 엔진에서 실행할 수 있는 이전 버전과 호환되는 JavaScript 버전으로 변환하는 데 주로 사용되는 무료 오픈 소스 JavaScript 트랜스컴파일러이다.
@@ -102,7 +106,31 @@
 
 14. 동적계획법
 
-15.
+15. call by value argument: 값이 넘어간다. / call by reference: 주소값이 넘어간다.
+</div>
+</details>
 
-- call by value argument: 값이 넘어간다.
-- call by reference: 주소값이 넘어간다.
+<details>
+<summary><b>5월 11일 개념정리 펼치기</b></summary>
+<div markdown="1">
+
+## 5월 11일 개념정리
+
+1. this
+
+- this를 사용하면 다른 객체에서도 사용가능하다.
+- this가 가리키는건 고유 메모리주소이다.
+- 화살표 함수의 this는 일반적인 this처럼 함수를 할당하지 않고, 바로 상위 scope에 this를 할당한다.
+
+2. scope
+
+- 스코프는 변수의 접근성과 휘발 유무를 제어한다.
+- 전역 스코프: 스크립트 어디서든 접근이 가능하다. 충돌 가능성이 있기 때문에 사용에 주의해야 한다.
+- 함수 스코프: 함수 내부에서 정의된 변수에 접근이 가능하며 매개변수는 함수 외부에서 접근 할 수 없다.
+
+3. closure
+
+- 폐쇄된 공간에 대한 접근 권한을 가진 함수를 말한다.
+
+</div>
+</details>
