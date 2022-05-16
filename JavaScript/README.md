@@ -132,22 +132,42 @@
 
 - 폐쇄된 공간에 대한 접근 권한을 가진 함수를 말한다.
 
-4. 기명함수 / 익명함수
-- 기명함수: 함수의 이름이 있는 함수
-- 익명함수: 함수의 이름이 없는 함수
+</div>
+</details>
 
-5. 변수은닉
-선언된 위치를 봐라 , 클로져 폐쇠된 공간안에 데이터에 접근하기 위한 테그닉 입니다!
+<details>
+<summary><b>5월 16일 개념정리 펼치기</b></summary>
+<div markdown="1">
 
-6. 생성자 함수
-- 생성자 함수를 생성하려면 new를 사용
-- new는 휘발되지 않게 새롭게 생성해준다. 
-- 함수 자체를 복사해서 새로 만드는 것
-- new를 쓰지 않으면 함수내의 휘발된다.
-  
-7. map
-map 객체는 키-값 쌍을 가지는 객체 자료형이다. Object는 메서드를 추가하거나 수정할 수없기 때문에  map이 생겼다.
+## 5월 16일 개념정리
 
+1. object-fit
+
+- `object-fit:cover` 이미지를 크기에 맞게 맞추지만 이미지의 손실이 날 수 있다.
+- `object-fit:contain` 비율을 유지하면서 커진다.
+
+2. screenX: 사용자의 모니터 가로기준 (만약 사용하고 있는 모니터 개수가 많으면 그 모니터값들이 더해져서 원하는 작동 방식이 이상해 질 수도 있다.)
+
+3. clinentX 브라우져 가로기준
+
+4. preventDefault(): 브라우져의 기본이벤트 동작을 취소 할 수 있다.
+
+5. contextmenu: 브라우져에서 우클릭을 하면 나오는 이벤트 메뉴이다.
+
+6. innerHTML를 사용해서 원하는 HTML요소를 생성 하고 appendChild메서드를 사용해서 만든 요소를 추가 할 수있다.
+
+   ```HTML
+   elLi.innerHTML = `<img src=${item} alt=''>`;
+   center.appendChild('elLi')
+   ```
+
+7. offsetWidth 메서드를 사용해서 요소의 width값을 가져오고 이를 활용 할 수 있다.
+
+   ```JavaScript
+   const radius = items[0].offsetWidth * items.  length / 3.14 / 2;
+   ```
+
+8. transform-style:preserve-3d속성과 perspective에 값을 추가하여 요소를 3d처럼 보이게 할 수있다.
 
 </div>
 </details>
