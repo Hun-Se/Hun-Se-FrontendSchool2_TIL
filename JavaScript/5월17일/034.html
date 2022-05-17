@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <!-- 실습 -->
+    <h1>나의 todo list</h1>
+    <p>1. 오늘 저녁에는 부대찌게를 끓여 먹겠다.<button type="button">삭제</button></p>
+    <p>2. 후식으로 슈팅스타를 먹겠다.<button type="button">삭제</button></p>
+    <p>3. 자기 전에 반드시 내일 아침 메뉴를 생각해두겠다.<button type="button">삭제</button></p>
+
+    <script>
+        const clickPar = document.querySelectorAll('p');
+        const clickBtn = document.querySelectorAll('button')
+        console.log(clickBtn);
+        console.log(clickPar);
+        
+        // clickPar.forEach(element => clickPar[element]);
+
+        //for문으로 자성
+        // for (var i = 0; i<clickPar.length; i++) {
+        //     clickPar[i].addEventListener('click', (elment) => {
+        //         alert(elment.target.textContent.slice(0,-2));
+        //     })
+        // }
+        
+        Array.prototype.forEach.call(clickPar, (item) => {
+            item.addEventListener('click', event => {
+                alert(event.target.textContent.slice(0,-2));
+            })
+        })
+
+        for (const item of clickBtn) {
+            item.addEventListener('click', (event) => {
+                let result = confirm('삭제하시겠습니까');
+                event.stopPropagation();
+                if (result) {
+                    item.parentElement.remove();
+                } 
+            });
+        }
+    </script>
+</body>
+</html>

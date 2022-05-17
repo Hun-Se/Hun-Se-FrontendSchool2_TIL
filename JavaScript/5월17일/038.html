@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+        // 실습 1
+        // const foods = ['치킨', '피자', '짜장면', '족발']
+        // function NewFoodmachine (foodNames) {
+        //     this.menu = foodNames;
+        // }
+
+        // NewFoodmachine.prototype.pickFood = function () {
+        //     console.log(this.menu[Math.floor(Math.random() *this.menu.length)]);
+        // } 
+
+        // const food1 = new NewFoodmachine(foods);
+
+        const sehun = {
+            name: '김세훈',
+            address: '제주',
+            phoneNum: '010-5004-8626'
+        }
+
+        function Sehun (name, address, phoneNum) {
+            this.name = name;
+            this.address = address;
+            this.phoneNum = phoneNum;
+        }
+
+        Sehun.prototype.canstudy = function (student) {
+            student.levelUp();
+        }
+
+        function Student (level) {
+            this.level = level;
+        }
+
+        Student.prototype.levelUp = function (level) {
+            this.level++;
+        }
+        
+
+        
+    </script>
+</body>
+</html>
+
+
