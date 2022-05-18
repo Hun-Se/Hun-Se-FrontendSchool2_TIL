@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <script>
+        class Todo {
+            constructor(item, state = false) {
+                this.item = item;
+                this.state = state;
+            }
+            changeState() {
+                this.state = !this.state
+            }
+        }
+
+        class TodoManager {
+            constructor() {
+                this.todoList = [];
+            }
+            addItem(item, state = false) {
+                this.todoList.push(new Todo(item, state));
+            }
+            getItems() {
+                return this.todoList;
+            }
+            // getLeftTodoCount() {
+            //     return this.todoList.filter((item) => item.state === false).length;
+            // }
+
+            getLeftTodoCount() {
+                return this.todoList.reduce((total, current) => {
+                    if (current === false) {
+                        return ++total
+                    } else {
+                        return total;
+                    }
+                }, 0);
+            }
+        }
+
+        const todomanager = new TodoManager();
+    </script>
+</body>
+
+</html>

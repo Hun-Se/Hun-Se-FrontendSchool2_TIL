@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+         function Robot() {
+            this.name = '세훈';
+        }
+
+        Robot.prototype.sayYourName = function () {
+            console.log(`삐리비리. 제 이름은 ${this.name}입니다. 주인님.`);
+        }
+
+        //super가 항상 먼저 나와야한다.
+        class BabyRobot extends Robot {
+            constructor (name) {
+                super(name);
+                this.ownName = '아이크';
+            }
+
+            sayBabyName() {
+                this.sayYourName();
+                console.log('Succeddingh You, father!');
+            }
+        }
+
+        const baby = new BabyRobot('재현');
+
+        class Sausage {
+            constructor (a,b) {
+                this.a = a;
+                this.b = b;
+            }
+            taste() {
+                console.log(`${this.a}와 ${this.b}맛이 난다!`);
+            }
+        }
+
+        const taste1 = new Sausage('파','불고기');
+
+        class FiresSausage extends Sausage {
+            taste() {
+                console.log(`${this.a}와 ${this.b}맛이 난다!불맛이나기시작합니다`);
+            }
+        }
+        const fireSausage = new FiresSausage('파','불고기');
+    </script>
+</body>
+</html>
