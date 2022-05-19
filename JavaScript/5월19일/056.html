@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <script>
+        // // forEach하면 원본이 사라진다.
+        // const aespa = ["카리나", "윈터", "지젤", "닝닝"];
+        // // 결과 : ['카리나💖', '윈터💖', '지젤💖', '닝닝💖']
+        // aespa.forEach((item,index) => {
+        //     aespa[index] = item + '💖';
+        // })
+
+        //map을 사용하여 새로운 배열로 생성한다. 원본은 항상 남겨두는게 좋다.
+        const aespa2 = aespa.map((item) =>{
+            return item + '💖';
+        })
+
+        console.log();
+        console.log(aespa2);
+    </script>
+</body>
+
+</html>

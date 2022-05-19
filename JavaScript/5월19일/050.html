@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+        function outer () {
+            let val = 'test';
+
+            function inner () {
+                console.log(val);
+            }
+
+            return inner;
+        }
+
+        const innerFunc = outer();
+
+        innerFunc();
+
+        //렉시컬스코프: 함수의 상위스코프를 결정하는 방법, 함수 안에 함수가 있는 것을 명시적으로 보이기 때문에 상위스코프를 파악 할 수 있다. 
+        // 다른말로 정적 스코프라고 할 수 있다.
+        // 동적 스코프는 함수가 실행되는 시점에서 스코프가 결정 된다. 반대로 정적 스코프는 우리가 작성한대로 스코프가 결정된다.
+
+    </script>
+</body>
+</html>
