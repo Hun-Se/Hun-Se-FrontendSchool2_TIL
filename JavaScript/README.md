@@ -273,4 +273,47 @@
 </div>
 </details>
 
+<details>
+<summary><b>5월 24일 개념정리 펼치기</b></summary>
+<div markdown="1">
+
+## 5월 24일 개념정리
+
+1. 보안이슈
+
+2. 예외처리, 애러처리
+
+3. try, catch: new Error(messeage) 에러를 생성하는 생성자 함수 try로 시작 에러를 만나면 catch(e)로 출력 -> finally 출력
+   아무리 프로그래밍에 능한 사람이더라도 에러가 있는 스크립트를 작성할 수 있습니다. 원인은 아마도 실수, 예상치 못한 사용자 입력, 잘못된 서버 응답 등의 수천만 가지 이유 때문일 겁니다.
+
+에러가 발생하면 스크립트는 ‘죽고’(즉시 중단되고), 콘솔에 에러가 출력됩니다.
+
+그러나 try..catch 문법을 사용하면 스크립트가 죽는 걸 방지하고, 에러를 ‘잡아서(catch)’ 더 합당한 무언가를 할 수 있게 됩니다.
+
+- 자바스크립트 에러 종류: https://ossam5.tistory.com/241
+
+4. Ajax : 비동기 통신, 자바스크립트를 이용하여 브라우저가 서버에게 비동기적으로 데이터를 요청하고, 응답 받은 데이터를 동적으로 페이지 렌더링 하는 방식을 Ajax(Asynchronous Javascript and XML)라고 한다.
+
+5. fetch: fetch는 비동기 네트워크 통신을 구현하기 위해 사용하는 Web API이다.(매우 중요, 프로젝트에 자주쓰임)
+   fetch()는 2개의 매개변수를 가진다.
+
+- 첫 번째 매개변수 (resource) : 필수 사항, HTTP 요청을 보낼 URL
+- 두 번째 매개변수 (options) : 선택 사항, method, headers, body 등
+
+6. HTTP 상태코드:
+
+- 1xx (조건부 응답): 요청을 받고 작업을 계속한다.
+- 2xx (성공): 클래스의 상태 코드는 클라이언트가 요청한 동작을 수신하여 이해했고 승낙했으며 성공적으로 처리한 상태이다.(200 중요)
+- 3xx (리다이렉션 완료): 클라이언트는 요청을 마치기 위해 추가 동작을 취해야 한다.
+- 4xx (요청 오류): 클라이언트에 오류가 있는 상태이다.(403, 404 중요)
+- 5xx (서버 오류): 서버가 유효한 요청을 명백하게 수행하지 못한 상태이다.
+
+  - 참고사이트: https://ko.wikipedia.org/wiki/HTTP_%EC%83%81%ED%83%9C_%EC%BD%94%EB%93%9C
+
+7. local storage: 웹 스토리지 객체(web storage object)인 localStorage와 sessionStorage는 브라우저 내에 키-값 쌍을 저장할 수 있게 해줍니다.페이지를 새로 고침하고(sessionStorage의 경우) 심지어 브라우저를 다시 실행해도(localStorage의 경우) 데이터가 사라지지 않고 남아있다.
+   참고사이트: https://ko.javascript.info/localstorage
+
+8. D3, Canvas, chart.js
+</div>
+</details>
 
