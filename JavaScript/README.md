@@ -1,5 +1,8 @@
 # JavaScript
 
+<a href="https://github.com/Hun-Se/Hun-Se-FrontendSchool2_TIL/tree/main/JavaScript/5월24일/074_요약정리_final.md">JavaScript 요약본</a>
+
+
 <details>
 <summary><b>5월 3일 개념정리 펼치기</b></summary>
 <div markdown="1">
