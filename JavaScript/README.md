@@ -317,6 +317,16 @@
    참고사이트: https://ko.javascript.info/localstorage
 
 8. D3, Canvas, chart.js
+
+9. 함수 호출 방식과 this
+자바스크립트는 함수 호출시 어떻게 호출 되는가에 따라서 동적으로 this가 결정된다.
+함수 호출시 this : window
+메소드 호출시 this : 메소드 객체
+내부함수 호출시 this : window
+엄격모드에서의 this : undefined
+이벤트 리스너 호출시 this : 이벤트 객체
+생성자 함수 호출시 this : 생성된 새 객체
+  
 </div>
 </details>
 
