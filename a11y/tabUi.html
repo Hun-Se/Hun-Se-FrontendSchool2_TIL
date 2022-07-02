@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>아리아 탭</title>
+    <style>
+      body {
+        padding: 30px;
+      }
+
+      .tap-list {
+        display: flex;
+        margin: 20px;
+        padding: 0;
+        list-style: none;
+        border: 1px solid black;
+      }
+
+      .tab-list li {
+        font-size: 20px;
+        border: 1px solid black;
+        margin-right: 20px;
+      }
+
+      .tab-list li a {
+        padding: 10px;
+      }
+
+      .tab-list li a {
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>aria로 만들어보는 탭</h1>
+    </header>
+    <nav>
+      <ul role="tablist" aria-label="탭의 제목">
+        <li role="tab" id="tab1" class="tab-active" aria-controls="section1">
+          <a href=""></a>첫번째
+        </li>
+        <li role="tab" id="tab2" aria-controls="section2">
+          <a href=""></a>두번째
+        </li>
+        <li role="tab" id="tab3" aria-controls="section3">
+          <a href=""></a>세번째
+        </li>
+        <li role="tab" id="tab4" aria-controls="section4">
+          <a href=""></a>네번째
+        </li>
+      </ul>
+    </nav>
+    <section
+      id="section1"
+      role="tabpanel"
+      aria-labelledby="tab1"
+      class="section-tab"
+    >
+      <h2>첫번째 내용</h2>
+      첫번째 내용 Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+      Quasi eos quidem vero ex nostrum adipisci corporis temporibus. Sit
+      quisquam placeat laudantium unde suscipit nesciunt atque laboriosam, harum
+      iste officiis distinctio.
+    </section>
+    <section id="section2" role="tabpanel" aria-labelledby="tab2">
+      <h2>두번째 내용</h2>
+      첫번째 내용 Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+      Quasi eos quidem vero ex nostrum adipisci corporis temporibus. Sit
+      quisquam placeat laudantium unde suscipit nesciunt atque laboriosam, harum
+      iste officiis distinctio.
+    </section>
+    <section id="section1" role="tabpanel" aria-labelledby="tab3">
+      <h2>세번째 내용</h2>
+      첫번째 내용 Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+      Quasi eos quidem vero ex nostrum adipisci corporis temporibus. Sit
+      quisquam placeat laudantium unde suscipit nesciunt atque laboriosam, harum
+      iste officiis distinctio.
+    </section>
+    <section id="section1" role="tabpanel" aria-labelledby="tab4">
+      <h2>네번째 내용</h2>
+      첫번째 내용 Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+      Quasi eos quidem vero ex nostrum adipisci corporis temporibus. Sit
+      quisquam placeat laudantium unde suscipit nesciunt atque laboriosam, harum
+      iste officiis distinctio.
+    </section>
+  </body>
+</html>
