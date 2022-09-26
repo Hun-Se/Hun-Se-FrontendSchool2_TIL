@@ -34,7 +34,7 @@
 </details>
 
 <details>
-<summary><b> Webpack <b></summary>
+<summary><b> Firebase <b></summary>
 <div markdown='1'>
 <a href="https://for-it-study.tistory.com/95">Firebase 정리 블로그 이동</a>
 </div>
