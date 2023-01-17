@@ -1,6 +1,10 @@
 // const b: string = "gi";
 
-import { ClassificationType, isConstructorDeclaration } from "typescript";
+import {
+  ClassificationType,
+  forEachChild,
+  isConstructorDeclaration,
+} from "typescript";
 
 // const d: undefined = undefined;
 // const e: null = null;
@@ -617,8 +621,280 @@ import { ClassificationType, isConstructorDeclaration } from "typescript";
 // add("1", 2);
 
 // class 자체를 넣을 때
-function add<T extends abstract new (...args: any) => any>(x: T) {
-  return x;
+// function add<T extends abstract new (...args: any) => any>(x: T) {
+//   return x;
+// }
+// class A {}
+// add(A);
+
+// interface Array<T> {
+//   forEach(
+//     callbackfn: (value: T, index: number, array: T[]) => void,
+//     thisArg?: any
+//   ): void;
+//   map<U>(
+//     callbackfn: (value: T, index: number, array: T[]) => U,
+//     thisArg?: any
+//   ): U[];
+
+//   filter<S extends T>(
+//     predicate: (value: T, index: number, array: T[]) => value is S,
+//     thisArg?: any
+//   ): S[];
+// }
+
+// 제네릭 때문에 타입 추론을 잘해준다.
+// ["1", 2, true].forEach((item) => {
+//   console.log(item);
+// });
+
+// const predicated = (value: string | number): value is string =>
+//   typeof value === "string";
+
+// const filtered = ["1", 2, "3", 4, "5"].filter(predicated);
+// const filtered = ["1", 2, "3", 4, "5"].filter<string>(
+//   (value): value is string => typeof value === "string"
+// );
+
+// interface Arr<T> {
+//   // forEach(callback: (item: T) => void): void;
+//   forEach(
+//     callbackfn: (value: T, index: number, array: T[]) => void,
+//     thisArg?: any
+//   ): void;
+// }
+
+// const a: Arr<number> = [1, 2, 3];
+// a.forEach((item) => {
+//   console.log(item);
+//   item.toFixed(1);
+// });
+
+// a.forEach((item) => {
+//   console.log(item);
+//   return "3";
+// });
+
+// const b: Arr<string> = ["1", "2", "3"];
+// b.forEach((item) => {
+//   console.log(item);
+//   item.charAt(3);
+// });
+
+// b.forEach((item) => {
+//   console.log(item);
+//   return "3";
+// });
+
+// const c: Arr<string> = ["1", "2", "3"];
+// c.forEach((item) => {
+//   console.log(item);
+//   item.charAt(3);
+// });
+
+// c.forEach((item) => {
+//   console.log(item);
+//   return "3";
+// });
+
+// interface Arr<T> {
+//   map<S>(callback: (v: T) => S): S[];
+//   // map<U>(callbackfn: (value: T, index: number, array: T[]) => U, thisArg?: any): U[];
+// }
+
+// const a: Arr<number> = [1, 2, 3];
+// const b = a.map((v) => v + 1);
+// const c = a.map((v) => v.toString());
+// const d = a.map((v) => v % 2 === 0);
+// const e: Arr<string> = ["1", "2", "3"];
+// const f = e.map((v) => +v);
+
+// interface Arr<T> {
+//   filter<S extends T>(callback: (v: T) => v is S): S[];
+//   filter<S extends T>(
+//     predicate: (value: T, index: number, array: T[]) => value is S,
+//     thisArg?: any
+//   ): S[];
+// }
+
+// const a: Arr<number> = [1, 2, 3];
+
+// const b = a.filter((v): v is number => v % 2 === 0);
+// const c: Arr<number | string> = [1, "2", 3, "4", 5];
+// const d = c.filter((v): v is string => typeof v === "string");
+
+// 공변성, 반공변성
+// return 값이 좁은타입에서 넓은 타입 대입이 가능, 매개변수는 넓은 타입에서 좁은 타입으로 대입가능
+// function a(x: string | number): number {
+//   return +x;
+// }
+
+// a("1");
+// type B = (x: string) => number | string;
+// const b: B = a;
+
+// interface Axios {
+//   get(): void;
+// }
+
+// interface CustomError extends Error {
+//   name: string;
+//   message: string;
+//   stack?: string;
+//   response?: {
+//     data: any;
+//   };
+// }
+
+// declare const axios: Axios;
+
+// (async () => {
+//   try {
+//     await axios.get();
+//   } catch (err: unknown) {
+//     if (err instanceof typeof CustomError){
+//       const customError = err;
+//     console.error(customError.response?.data);
+//     }
+//   }
+// })();
+
+// interface Profile {
+//   name: string;
+//   age: number;
+//   married: boolean;
+// }
+// type Name = Profile["name"];
+
+// const hun: Profile = {
+//   name: "hun",
+//   age: 28,
+//   married: false,
+// };
+
+// Partial를 쓰면 모두 옵셔널로 바뀌기 때문에 잘 쓰지 않는다.
+// Pratiol<Profile> Profile을 nmae?:string; 으로 바꾼다.
+// const newHun: Partial<Profile> = {
+//   name: "hun",
+//   age: 28,
+// };
+
+// type P<T> = {
+//   [key in keyof T]?: T[key];
+// }
+
+// const newHun: P<Profile> = {
+//   name: "hun",
+//   age: 28,
+// };
+
+// Pick 이나 Omit을 쓰기 Pick은 필요한 타입 가져오기 Omit은 필요없는 타입 빼버리기
+
+// interface Profile {
+//   name: string;
+//   age: number;
+//   married: boolean;
+// }
+
+// type P<T, S extends keyof T> = {
+//   [Key in S]: T[Key];
+// };
+
+// const hun: Profile = {
+//   name: "hun",
+//   age: 28,
+//   married: false,
+// };
+
+// // const newHun: P<Profile, "name" | "age"> = {
+// //   name: "hun",
+// //   age: 28,
+// // };
+
+// type Animal = "Cat" | "Dog" | "Human";
+// type Mammal = Exclude<Animal, "Human">;
+// type Human = Extract<Animal, "Cat" | "Dog">;
+
+// type A = Exclude<keyof Profile, "married">;
+
+// type O<T, S extends keyof any> = Pick<T, Exclude<keyof T, S>>;
+// const newHun: O<Profile, "married"> = {
+//   name: "hun",
+//   age: 29,
+// };
+
+// interface Profile {
+//   name?: string;
+//   age?: number;
+//   married?: boolean;
+// }
+// type Name = Profile["name"];
+
+// type R<T> = {
+//   [Key in keyof T]-?: T[Key];
+// };
+
+// const hun: Required<Profile> = {
+//   name: "hun",
+//   age: 29,
+//   married: false,
+// };
+
+// hun.name = "sehun";
+
+// interface Obj {
+//   [key: string]: number;
+// }
+// type R<T extends keyof any, S> = {
+//   [Key in T]: S;
+// };
+// const a: Record<string, number> = { a: 3, b: 5, c: 7 };
+// type N<T> = T extends null | undefined ? never : T;
+
+// type A = string | null | undefined | boolean | number;
+// type B = NonNullable<A>;
+
+function zip(
+  x: number,
+  y: string,
+  z: boolean
+): { x: number; y: string; z: boolean } {
+  return { x, y, z };
 }
-class A {}
-add(A);
+//함수제한
+// infer는 extends에서만 사용이 가능하고 매개변수의 값을 추론조건? 추론 성공시의 값 : 추론 실패 시의 값을 나타낸다.
+// type P<T extends (...args: any) => any> = T extends (...args: infer A) => any
+//   ? A
+//   : never;
+// type R<T extends (...args: any) => any> = T extends (...args: any) => infer A
+//   ? A
+//   : never;
+// type Params = P<typeof zip>;
+// type Return = R<typeof zip>;
+// type First = Params[0];
+
+// type ConstructorParameters<T extends abstract new (...args: any) => any> =
+//   T extends abstract new (...args: infer P) => any ? P : never;
+
+// const a = "Hello World";
+// const b: Lowercase<typeof a> = a.toLowerCase;
+
+// infer
+
+const p1 = Promise.resolve(1)
+  // Promise<number>
+  .then((a) => a + 1)
+  // Promise<number>
+
+  .then((a) => a + 1)
+  // Promise<number>
+  .then((a) => a.toString());
+// Promise<string>
+const p2 = Promise.resolve(2); //Promise number
+const p3 = new Promise((res, rej) => {
+  setTimeout(res, 1000);
+});
+
+Promise.all([p1, p2, p3]).then((result) => {
+  console.log(result); // ["3",2,undefined]
+});
