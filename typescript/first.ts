@@ -881,20 +881,46 @@ function zip(
 
 // infer
 
-const p1 = Promise.resolve(1)
-  // Promise<number>
-  .then((a) => a + 1)
-  // Promise<number>
+// const p1 = Promise.resolve(1)
+//   // Promise<number>
+//   .then((a) => a + 1)
+//   // Promise<number>
 
-  .then((a) => a + 1)
-  // Promise<number>
-  .then((a) => a.toString());
-// Promise<string>
-const p2 = Promise.resolve(2); //Promise number
-const p3 = new Promise((res, rej) => {
-  setTimeout(res, 1000);
-});
+//   .then((a) => a + 1)
+//   // Promise<number>
+//   .then((a) => a.toString());
+// // Promise<string>
+// const p2 = Promise.resolve(2); //Promise number
+// const p3 = new Promise((res, rej) => {
+//   setTimeout(res, 1000);
+// });
 
-Promise.all([p1, p2, p3]).then((result) => {
-  console.log(result); // ["3",2,undefined]
-});
+// Promise.all([p1, p2, p3]).then((result) => {
+//   console.log(result); // ["3",2,undefined]
+// });
+
+// bind 예시
+// function a(this: Window | typeof obj) {
+//   console.log(this.name);
+// }
+
+// const obj = { name: "sehun" };
+// const b = a.bind(obj);
+// b(); // "sehun"
+
+// type T = ThisParameterType<typeof a>;
+// type NoThis = OmitThisParameter<typeof a>;
+
+// function add(a: number, b: number, c: number, d: number, e: number, f: number) {
+//   return a + b + c + d + e + f;
+// }
+
+// const add1 = add.bind(null);
+// const add2 = add.bind(null, 1);
+// const add3 = add.bind(null, 1, 2);
+// const add4 = add.bind(null, 1, 2, 3);
+// const add5 = add.bind(null, 1, 2, 3, 4);
+
+// bind는 인수로 받을 때 5개 이상을 정의해 놓지 않았다. 인수를 추가하기 위하여 계속적으로 타입을 설정해야되기 때문에
+// 보통의 경우인 5가지 이상의 인수를 받는 형식을 입력해 놓지 않았다.
+// const add6 = add.bind(null, 1, 2, 3, 4, 5);
